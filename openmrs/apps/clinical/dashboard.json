@@ -1,0 +1,1013 @@
+{
+  "general": {
+        "translationKey": "DASHBOARD_TAB_VALIDATION_COMMITTEE_KEY",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 1,
+        "sections": {
+           "programs": {
+            "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+            "type": "programs",
+            "displayOrder": 0
+          },
+            "navigationLinksControl": {
+              "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+              "type": "navigationLinksControl",
+              "displayOrder": 1,
+              "showLinks" : ["home","registration", "enrolment"],
+              "customLinks": [
+                {
+                    "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
+                    "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology#/patient/{{patientUuid}}/document"
+                },
+                {
+                  "name": "bedManagement",
+                  "translationKey": "PATIENT_BED_MANAGEMENT_PAGE_KEY",
+                  "url": "../ipd/#/bedManagement/patient/{{patientUuid}}/visit/{{visitUuid}}"
+                },
+                {
+                  "name": "ipdDashboard",
+                  "translationKey": "PATIENT_IPD_DASHBOARD_KEY",
+                  "url": "../ipd/#/patient/{{patientUuid}}/visit/{{visitUuid}}/dashboard"
+                }
+              ]
+            },
+            "final Validation":{
+                "translationKey": "DASHBOARD_TITLE_FINAL_VALIDATION",
+                "type": "vitals",
+                "isObservation": true,
+                "displayOrder": 2,
+                "dashboardConfig": {
+                    "isEditable": true,
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "FV, Patient Videos",
+                        "FV, Date of Presentation",
+                        "FV, Outcomes FV",
+                        "FV, Comments on FV",
+                        "FV, Expected Date of Arrival",
+                        "FV, Does the Patient need Accommodation?",
+                        "FV, Type of Admission Recommended"
+                    ]
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "FV, Final validation"
+                    ],
+                    "numberOfVisits": 3,
+                    "showDetailsButton": true,
+                    "pivotTable": {}
+                },
+              "hideEmptyDisplayControl": true
+            },
+          "Medical History":{
+            "translationKey": "DASHBOARD_TITLE_PATIENT_MEDICAL_HISTORY",
+            "type": "vitals",
+            "isObservation": true,
+            "displayOrder": 3,
+            "dashboardConfig": {
+              "showDetailsButton": true,
+              "isEditable": true,
+              "conceptNames": [
+                "MH, Name of MLO",
+                "MH, Network Area",
+                "MH, Date of injury",
+                "MH, Cause of injury",
+                "Stage",
+                "FSTG, Specialty determined by MLO"
+
+              ],
+              "scope": "latest",
+              "showGroupDateTime": false
+            },
+            "expandedViewConfig": {
+              "conceptNames": [
+                "MH, Name of MLO",
+                "MH, Network Area",
+                "MH, Date of injury",
+                "MH, Cause of injury",
+                "Stage",
+                "FSTG, Specialty determined by MLO"
+
+              ],
+              "isEditable": true,
+              "numberOfVisits": 3,
+              "showDetailsButton": true,
+              "pivotTable": {}
+            },
+            "hideEmptyDisplayControl": true
+          },
+          "Follow-up Validation":{
+            "translationKey": "DASHBOARD_TITLE_FOLLOWUP_VALIDATION",
+            "type": "vitals",
+            "isObservation": true,
+            "displayOrder": 4,
+            "dashboardConfig": {
+              "isEditable": true,
+              "showDetailsButton": true,
+              "conceptNames": [
+                "FUP Patient Videos",
+                "FUP, Date of presentation at Followup",
+                "FUP, Outcomes for follow-up surgical validation",
+                "FUP, Time for next medical follow-up",
+                "FUP, Comments about next follow-up",
+                "FUP, Comments about MBA",
+                "FUP, Dismissal reason",
+                "FUP, Comments about dismissal",
+                "FUP, Reason for re-admission",
+                "FUP, Priority",
+                "FUP, Name (s) of Surgeon 1",
+                "FUP, Name (s) of Surgeon 2",
+                "FUP, Does the Patient need Surgical Final Validation"
+              ]
+            },
+            "expandedViewConfig": {
+              "conceptNames": [
+                "Follow-up validation"
+              ],
+              "numberOfVisits": 3,
+              "showDetailsButton": true,
+              "pivotTable": {}
+            },
+            "hideEmptyDisplayControl": true
+          },
+          "visits": {
+            "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
+            "type": "visits",
+            "displayOrder": 5,
+            "dashboardConfig": {
+              "title": null,
+              "maximumNoOfVisits": 8,
+              "groupByVisits": true
+            }
+          },
+          "First Stage Validation":{
+            "translationKey": "DASHBOARD_TITLE_FIRST_STAGE_VALIDATION",
+            "type": "vitals",
+            "isObservation": true,
+            "displayOrder":6,
+            "dashboardConfig": {
+              "isEditable": true,
+              "showDetailsButton": true,
+              "conceptNames": [
+                "FSTG, Type of medical information received",
+                "FSTG, Date received",
+                "FSTG, Patient Videos",
+                "FSTG, Date of presentation at 1st stage",
+                "FSTG, Outcomes for 1st stage surgical validation",
+                "FSTG, Priority",
+                "FSTG, Does the Patient need Surgical Final Validation",
+                "FSTG, Comments",
+                "FSTG, Type of medical information needed for next submission",
+                "FSTG, Outcomes for 1st stage Anaesthesia validation",
+                "FST, Type of medical information needed for next submission",
+                "FSTG, Postpone reason",
+                "FSTG, Comments about postpone reason",
+                "FSTG, Refused Reason"
+              ]
+            },
+            "expandedViewConfig": {
+              "conceptNames": [
+                "First Stage Validation"
+              ],
+              "numberOfVisits": 3,
+              "showDetailsButton": true,
+              "pivotTable": {}
+            },
+            "hideEmptyDisplayControl": true
+          },
+            "Radiology": {
+                "type": "radiology",
+              "groupByVisits": true,
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
+                "displayOrder": 7,
+                "config": {
+                    "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY"
+                }
+            },
+          "bacteriologyResults": {
+            "translationKey": "DASHBOARD_TITLE_MICROBIOLOGY_LAB_RESULTS_KEY",
+            "type": "bacteriologyResultsControl",
+            "scope": "All",
+            "orderType": "",
+            "dashboardConfig": {
+              "conceptNames": [
+                "BACTERIOLOGY CONCEPT SET"
+              ]
+            }
+          },
+            "validationForms": {
+                "type": "forms",
+                "displayOrder": 8,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 1
+                },
+                "formGroup": [
+                    "Patient History",
+                    "First Stage Validation",
+                    "Follow-up validation",
+                    "FV, Final validation",
+                    "Vital Signs",
+                    "OPD Nursing Initial Assessment",
+                    "Health Education",
+                    "Initial Anesthesia Assessment",
+                    "Physiotherapy initial assessment",
+                    "MD Initial Assessment",
+                    "Surgeon Pre-Op Assessment and Treatment Plan",
+                    "Physical Examination",
+                    "Psychology initial assessment",
+                    "OBS, Surgical Diagnoses",
+                    "OBS, Medical Diagnoses",
+                    "Nursing Needs - Ward",
+                    "OPD Nursing Note",
+                    "Surgical Ward Admission Nursing Assessment",
+                    "Ward Nursing Note",
+                    "Physician Progress Note-Ward",
+                    "Complications Set",
+                    "Post-Op Ward Monitoring",
+                    "Surgeon Follow-up",
+                    "Operative Report",
+                    "Observation Sheet",
+                    "Post-operative Anaesthesia Note",
+                    "Radiology Documents",
+                    "Lower Limb Physiotherapy Assessment",
+                    "Upper Limb Physiotherapy Assessment",
+                    "Maxillofacial Physio Assessment",
+		            "Medical Doctor OPD Follow-up",
+                    "Pain Nurse Follow-up",
+                    "Administrative Note"
+                ],
+                "translationKey": "DASHBOARD_TITLE_EDIT"
+            }
+        }
+    },
+  "patientSummary": {
+    "translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY",
+    "displayByDefault": true,
+    "maxRecentlyViewedPatients": 10,
+    "sections": {
+      "patient Information": {
+        "type": "custom",
+        "displayOrder": 0,
+        "config": {
+          "title": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+          "template": "<patient-information section='config' patient='patient' enrollment='enrollment'></patient-information>"
+        }
+      },
+      "Medications administered": {
+        "translationKey": "DASHBOARD_TITLE_MEDICATION_KEY",
+        "type": "treatment",
+        "displayOrder": 12,
+        "dashboardConfig": {
+          "showFlowSheet": true,
+          "showListView": true,
+          "showRoute": true,
+          "showDrugForm": true,
+          "numberOfVisits": 5,
+          "showOtherActive": true,
+          "showDetailsButton": false
+        },
+        "expandedViewConfig": {
+          "translationKey": "DASHBOARD_TITLE_MEDICATION_KEY",
+          "showFlowSheet": true,
+          "showListView": true,
+          "showRoute": true,
+          "showDrugForm": true,
+          "numberOfVisits": 10,
+          "showOtherActive": true,
+          "showDetailsButton": false
+        }
+      },
+      "Medical History": {
+        "translationKey": "DASHBOARD_TITLE_PATIENT_MEDICAL_HISTORY",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 4,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "persistOrderOfConcepts": true,
+          "isEditable": true,
+          "conceptNames": [
+            "MH, Date of injury",
+            "MH, Cause of injury",
+            "MD, Reason for admission to program",
+            "MD, History of Allergy",
+            "MD, Comments about allergy",
+            "AIA, Is the patient allergic to any drugs / medications ?",
+            "AIA, Type of medication allergy",
+            "MD, History of present illness"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "MH, Date of injury",
+            "MH, Cause of injury",
+            "MD, Reason for admission to program",
+            "MD, History of Allergy",
+            "MD, Comments about allergy",
+            "AIA, Is the patient allergic to any drugs / medications ?",
+            "AIA, Type of medication allergy",
+            "MD, History of present illness"
+          ],
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Medical Course": {
+        "translationKey": "DASHBOARD_TITLE_PSYCHO_MEDICAL_COURSE",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 13,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "conceptNames": [
+            "MDOF, Medical course of patient in RSP"
+          ],
+          "scope": "latest"
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "MDOF, Medical course of patient in RSP"
+          ],
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Past Medical history": {
+        "translationKey": "DASHBOARD_TITLE_PAST_MEDICAL_HISTORY",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 6,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "persistOrderOfConcepts": true,
+          "conceptNames": [
+            "AIA, Past medical history",
+            "AIA, Past medical history, other",
+            "MD, Medical History",
+            "MD, Other medical problems",
+            "AIA, Adverse reaction to anaesthesia",
+            "AIA, Comments about adverse reaction",
+            "AIA, Did an incident occur during previous blood transfusion",
+            "AIA, Describe",
+            "MD, History of Fixation"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "AIA, Past medical history",
+            "AIA, Past medical history, other",
+            "MD, Medical History",
+            "MD, Other medical problems",
+            "AIA, Adverse reaction to anaesthesia",
+            "AIA, Comments about adverse reaction",
+            "AIA, Did an incident occur during previous blood transfusion",
+            "AIA, Describe",
+            "MD, History of Fixation"
+          ],
+          "scope": "latest",
+          "persistOrderOfConcepts": true,
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Psycho-Social Course": {
+        "translationKey": "DASHBOARD_TITLE_PSYCHO_SOCIAL_COURSE",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 16,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "persistOrderOfConcepts": true,
+	  "hideEmptyRecords": true,
+          "isEditable": true,
+          "groupByConcept": "PIA, Date of consultation",
+          "templateName": "Psychology initial assessment",
+          "conceptNames": [
+            "PIA, SQR20 (score)",
+            "PIA, PTSD (score)",
+            "PIA, PSYca 3-6 (child)",
+            "PIA, SDQ P7-10",
+            "PIA, SDQ S11-17",
+            "PIAD, SQR20 (score)",
+            "PIAD, PTSD (score)",
+            "PIAD, PSYca 3-6 (child)",
+            "PIAD, SDQ P7-10",
+            "PIAD, SDQ S11-17"
+          ],
+          "showGroupDateTime": false,
+          "latestCount": 5
+        },
+        "expandedViewConfig": {
+          "groupByConcept": "PIA, Date of consultation",
+          "templateName": "Psychology initial assessment",
+          "conceptNames": [
+            "PIA, SQR20 (score)",
+            "PIA, PTSD (score)",
+            "PIA, PSYca 3-6 (child)",
+            "PIA, SDQ P7-10",
+            "PIA, SDQ S11-17",
+            "PIAD, SQR20 (score)",
+            "PIAD, PTSD (score)",
+            "PIAD, PSYca 3-6 (child)",
+            "PIAD, SDQ P7-10",
+            "PIAD, SDQ S11-17"
+          ],
+          "numberOfVisits": 5,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Social History": {
+        "translationKey": "DASHBOARD_TITLE_SOCIAL_HISTORY",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 2,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "conceptNames": [
+            "Health Education"
+          ],
+          "obsIgnoreList": [
+            "HE, Highest education level",
+            "HE, Date of consultation",
+            "HE, Marital status",
+            "HE, Pregnancy status",
+            "HE, External devices, present",
+            "HE, Other type of external device",
+            "HE, Nutritional Assessment",
+            "HE, Personal hygiene",
+            "HE, Education learning needs",
+            "HE, Referral care Plan"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "Health Education"
+          ],
+          "obsIgnoreList": [
+            "HE, Highest education level",
+            "HE, Date of consultation",
+            "HE, Marital status",
+            "HE, Pregnancy status",
+            "HE, External devices, present",
+            "HE, Other type of external device",
+            "HE, Nutritional Assessment",
+            "HE, Personal hygiene",
+            "HE, Education learning needs",
+            "HE, Referral care Plan"
+          ],
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Review of Systems": {
+        "translationKey": "DASHBOARD_TITLE_REVIEW_OF_SYSTEMS",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 3,
+        "dashboardConfig": {
+          "isEditable": true,
+          "hideEmptyRecords": true,
+          "templateName": "MD Initial Assessment",
+          "groupByConcept": "MD, Date of consultation",
+          "pivotOn": "column",
+          "numberOFVisits": 1,
+          "latestCount": 1,
+          "conceptNames": [
+            "MD, Review of systems, general",
+            "MD, Description and duration of symptom (general)",
+            "MD, Other ROS general symptoms",
+            "MD, Review of systems, cardiopulmonary",
+            "MD, Description and duration of symptom (cardiopulmonary)",
+            "MD, Other ROS cardiopulmonary symptoms",
+            "MD, Review of systems, gastrointestinal",
+            "MD, Description and duration of symptom (gastrointestinal)",
+            "MD, Other ROS gastrointestinal symptoms",
+            "MD, Review of systems, genitourinary",
+            "MD, Description and duration of symptom (genitourinary)",
+            "MD, Other ROS genitourinary symptoms",
+            "MD, Review of systems, central nervous system",
+            "MD, Description and duration of symptom (central nervous system)",
+            "MD, Other ROS central nervous system symptoms",
+            "MD, Review of systems, HEENT",
+            "MD, Description and duration of symptom (HEENT)",
+            "MD, Other ROS HEENT symptoms",
+            "MD, Review of systems, musculoskeletal",
+            "MD, Description and duration of symptom (musculoskeletal)",
+            "MD, Other ROS musculoskeletal symptoms"
+          ]
+        },
+        "expandedViewConfig": {
+          "templateName": "MD Initial Assessment",
+          "groupByConcept": "MD, Date of consultation",
+          "conceptNames": [
+            "MD, Review of systems, general",
+            "MD, Description and duration of symptom (general)",
+            "MD, Other ROS general symptoms",
+            "MD, Review of systems, cardiopulmonary",
+            "MD, Description and duration of symptom (cardiopulmonary)",
+            "MD, Other ROS cardiopulmonary symptoms",
+            "MD, Review of systems, gastrointestinal",
+            "MD, Description and duration of symptom (gastrointestinal)",
+            "MD, Other ROS gastrointestinal symptoms",
+            "MD, Review of systems, genitourinary",
+            "MD, Description and duration of symptom (genitourinary)",
+            "MD, Other ROS genitourinary symptoms",
+            "MD, Review of systems, central nervous system",
+            "MD, Description and duration of symptom (central nervous system)",
+            "MD, Other ROS central nervous system symptoms",
+            "MD, Review of systems, HEENT",
+            "MD, Description and duration of symptom (HEENT)",
+            "MD, Other ROS HEENT symptoms",
+            "MD, Review of systems, musculoskeletal",
+            "MD, Description and duration of symptom (musculoskeletal)",
+            "MD, Other ROS musculoskeletal symptoms"
+          ],
+          "hideEmptyRecords": true,
+          "pivotOn": "column",
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Physiotherapy Follow-up Plan": {
+        "translationKey": "DASHBOARD_TITLE_PHYSIOTHERAPY_FOLLOW-UP_PLAN",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 20,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "persistOrderOfConcepts": true,
+          "conceptNames": [
+            "LLA, Follow-up Plan",
+            "ULA, Followup Plan",
+            "MPA, Followup Plan"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "LLA, Follow-up Plan",
+            "ULA, Followup Plan",
+            "MPA, Followup Plan"
+          ],
+          "isEditable": true,
+          "persistOrderOfConcepts": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "physical Examination": {
+        "type": "custom",
+        "displayOrder": 5,
+        "config": {
+          "title": "DASHBOARD_TITLE_PHYSICAL_EXAMINATION_KEY",
+          "template": "<physical-examination section='config' patient='patient' enrollment='enrollment'></physical-examination>"
+        }
+      },
+      "Surgical Follow-up Plan": {
+        "type": "custom",
+        "displayOrder": 19,
+        "config": {
+          "title": "DASHBOARD_TITLE_SURGICAL_FOLLOW_UP_PLAN_KEY",
+          "template": "<surgical-follow_up section='config' patient='patient' enrollment='enrollment'></surgical-follow_up>"
+        }
+      },
+      "Discharge Medication": {
+        "type": "custom",
+        "displayOrder": 17,
+        "config": {
+          "title": "DASHBOARD_TITLE_DISCHARGE_MEDICATION_KEY",
+          "template": "<discharge-medication section='config' patient='patient' enrollment='enrollment'></discharge-medication>"
+        }
+      },
+      "Diagnoses": {
+        "translationKey": "DASHBOARD_TITLE_SURGICAL_DIAGNOSES",
+        "type": "custom",
+        "displayOrder": 7,
+        "config": {
+          "title": "DASHBOARD_TITLE_SURGICAL_DIAGNOSES",
+          "template": "<surgical-diagnosis section='config' patient='patient' enrollment='enrollment'></surgical-diagnosis>"
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "OBS, Surgical Diagnoses",
+            "OBS, Medical Diagnoses"
+          ],
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Operative Course in Amman": {
+        "type": "custom",
+        "displayOrder": 9,
+        "displayType": "Full-Page",
+        "config": {
+          "title": "DASHBOARD_TITLE_OPERATIVE_COURSE_IN_AMMAN_KEY",
+          "template": "<surgical-history section='section' patient='patient'></surgical-history>"
+        }
+      },
+      "Pain Management": {
+        "translationKey": "DASHBOARD_TITLE_PAIN_MANAGEMENT",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 14,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "showGroupDateTime": false,
+          "persistOrderOfConcepts": true,
+          "isEditable": true,
+          "conceptNames": [
+            "PNF, Date recorded",
+            "PNF, Type of pain experienced by the patient",
+            "PNF, Pain severity",
+            "PNF, Patient score",
+            "PNF, Side of pain",
+            "PNF, Site of pain",
+            "PNF, Chief complaint of patient",
+            "PNF, Is the pain:",
+            "PNF, Onset of the pain:",
+            "PNF, Current medication",
+            "PNF, Pain usually occurs with:",
+            "PNF, Increasing or decreasing factors:",
+            "PNF, Referral needed:",
+            "PNF, Other comments"
+          ],
+          "scope": "latest"
+        },
+        "expandedViewConfig": {
+          "persistOrderOfConcepts": true,
+          "conceptNames": [
+            "PNF, Date recorded",
+            "PNF, Type of pain experienced by the patient",
+            "PNF, Pain severity",
+            "PNF, Patient score",
+            "PNF, Side of pain",
+            "PNF, Site of pain",
+            "PNF, Chief complaint of patient",
+            "PNF, Is the pain:",
+            "PNF, Onset of the pain:",
+            "PNF, Current medication",
+            "PNF, Pain usually occurs with:",
+            "PNF, Increasing or decreasing factors:",
+            "PNF, Referral needed:",
+            "PNF, Other comments"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false,
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "bacteriology": {
+        "type": "custom",
+        "displayOrder": 11,
+        "displayType": "Full-Page",
+        "config": {
+          "title": "DASHBOARD_TITLE_MICROBIOLOGY_LAB_RESULTS_KEY",
+          "template": "<microbiology-lab-results section='config' patient='patient' enrollment='enrollment'></microbiology-lab-results>"
+        }
+      },
+      "Administrative Note": {
+        "translationKey": "ADMINISTRATIVE_NOTE_KEY",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 21,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "conceptNames": [
+            "Administrative Note"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "Administrative Note"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false,
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Medication History": {
+        "translationKey": "DASHBOARD_TITLE_MEDICATION_HISTORY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 8,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "persistOrderOfConcepts": true,
+          "isEditable": true,
+          "groupByConcept": "MD, Date of last dose",
+          "templateName": "MD, Medication",
+          "conceptNames": [
+            "MD, Type of medication",
+            "MD, Dose and frequency"
+          ],
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "groupByConcept": "MD, Date of last dose",
+          "templateName": "MD, Medication",
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Surgeries Performed outside AMH": {
+        "translationKey": "DASHBOARD_TITLE_SURGERIES_PERFORMED",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 1,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "persistOrderOfConcepts": true,
+          "isEditable": true,
+          "groupByConcept": "MD, Date of procedure",
+          "templateName": "MD, Surgical Procedures Outside AMH",
+          "conceptNames": [
+            "MD, Surgical Procedures Performed Outside AMH Data",
+            "MD, Side of procedure",
+            "MD, Site of procedure",
+            "MD, Comment of procedure"
+          ],
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "groupByConcept": "MD, Date of procedure",
+          "templateName": "MD, Surgical Procedures Outside AMH",
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Early Complications": {
+        "translationKey": "DASHBOARD_TITLE_EARLY_COMPLICATIONS",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 10,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "hideEmptyRecords": true,
+          "conceptNames": [
+            "FP, Early Follow-up",
+            "CC, Complications"
+          ],
+          "obsIgnoreList":[
+            "SFP, Early Follow-up",
+            "SFP, Partial achievement of objective",
+            "SFP, Patient requires amputation"
+          ]
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "FP, Early Follow-up",
+            "CC, Complications"
+          ],
+          "obsIgnoreList":[
+            "SFP, Early Follow-up",
+            "SFP, Partial achievement of objective",
+            "SFP, Patient requires amputation"
+          ],
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Psycho-Social Overview": {
+        "translationKey": "DASHBOARD_TITLE_PSYCHO_SOCIAL_COMMENTS",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 18,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "persistOrderOfConcepts": true,
+          "conceptNames": [
+            "PIA, Psychosocial overview and comments",
+            "PIA, Social needs or other referrals",
+            "PIA, Specific comments regarding the caretaker"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "PIA, Psychosocial overview and comments",
+            "PIA, Social needs or other referrals",
+            "PIA, Specific comments regarding the caretaker"
+          ],
+          "scope": "latest",
+          "persistOrderOfConcepts": true,
+          "showGroupDateTime": false,
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      },
+      "Medical Follow-up Plan": {
+        "translationKey": "DASHBOARD_TITLE_MEDICAL_FOLLOW-UP_PLAN",
+        "type": "vitals",
+        "isObservation": true,
+        "displayOrder": 15,
+        "dashboardConfig": {
+          "showDetailsButton": true,
+          "isEditable": true,
+          "conceptNames": [
+            "MDOF, Medical follow-up needs"
+          ],
+          "scope": "latest",
+          "showGroupDateTime": false
+        },
+        "expandedViewConfig": {
+          "conceptNames": [
+            "MDOF, Medical follow-up needs"
+          ],
+          "scope": "latest",
+          "isEditable": true,
+          "numberOfVisits": 3,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        }
+      }
+    }
+  },
+  "Physio Dashboard": {
+      "translationKey": "DASHBOARD_TAB_PHYSIO_DASHBOARD_KEY",
+      "displayByDefault": false,
+      "maxRecentlyViewedPatients": 10,
+      "sections": {
+
+        "patient Information": {
+          "type": "custom",
+          "displayOrder": 0,
+          "config": {
+            "title": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+            "template": "<patient-information section='config' patient='patient' enrollment='enrollment'></patient-information>"
+          }
+        },
+        "Medical History": {
+          "translationKey": "DASHBOARD_TITLE_PATIENT_MEDICAL_HISTORY",
+          "type": "vitals",
+          "isObservation": true,
+          "displayOrder": 2,
+          "dashboardConfig": {
+            "showDetailsButton": true,
+            "persistOrderOfConcepts": true,
+            "isEditable": true,
+            "conceptNames": [
+              "MH, Date of injury",
+              "MH, Cause of injury",
+              "MD, Reason for admission to program",
+              "OBS, Surgical Diagnoses"
+            ],
+            "scope": "latest",
+            "showGroupDateTime": false
+          },
+          "expandedViewConfig": {
+            "conceptNames": [
+              "MH, Date of injury",
+              "MH, Cause of injury",
+              "MD, Reason for admission to program",
+              "OBS, Surgical Diagnoses"
+            ],
+            "isEditable": true,
+            "numberOfVisits": 2,
+            "showDetailsButton": true,
+            "pivotTable": {}
+          },
+          "hideEmptyDisplayControl": true
+        },
+        "Operative Course in Amman": {
+          "type": "custom",
+          "displayOrder": 4,
+          "displayType": "Full-Page",
+          "config": {
+            "title": "DASHBOARD_TITLE_OPERATIVE_COURSE_IN_AMMAN_KEY",
+            "template": "<surgical-history section='section' patient='patient'></surgical-history>"
+          }
+        },
+        "Physio Forms": {
+          "translationKey": "DASHBOARD_TITLE_PHYSIO_FORMS",
+          "type": "vitals",
+          "isObservation": true,
+          "displayOrder": 1,
+          "dashboardConfig": {
+            "showDetailsButton": true,
+            "isEditable": true,
+            "conceptNames": [
+              "Lower Limb Physiotherapy Assessment",
+              "Upper Limb Physiotherapy Assessment",
+              "Maxillofacial Physio Assessment"
+            ],
+            "obsIgnoreList": [
+              "ULA, Motor",
+              "LLA, Motor",
+              "LLA, Total Score",
+              "LLA, Risk of Falls",
+              "LLA Pediatric, Total Score",
+              "LLA LEFI, Total Score",
+              "ULA, Basic grip test, total score",
+              "ULA, Total score",
+              "ULA, Final score",
+              "LLA, R.O.M Test for Lower Limbs",
+              "LLA, Stump circumference",
+              "LLA, Muscle Test for Lower Limbs",
+              "ULA, Hand and Finger",
+              "ULA, R.O.M Test for Upper Limbs",
+              "ULA, Muscle Test for Upper Limbs"
+            ]
+          },
+          "expandedViewConfig": {
+            "conceptNames": [
+              "Lower Limb Physiotherapy Assessment",
+              "Upper Limb Physiotherapy Assessment",
+              "Maxillofacial Physio Assessment"
+            ],
+            "obsIgnoreList": [
+              "ULA, Motor",
+              "LLA, Motor",
+              "LLA, Total Score",
+              "LLA, Risk of Falls",
+              "LLA Pediatric, Total Score",
+              "LLA LEFI, Total Score",
+              "ULA, Basic grip test, total score",
+              "ULA, Total score",
+              "ULA, Final score",
+              "LLA, R.O.M Test for Lower Limbs",
+              "LLA, Stump circumference",
+              "LLA, Muscle Test for Lower Limbs",
+              "ULA, Hand and Finger",
+              "ULA, R.O.M Test for Upper Limbs",
+              "ULA, Muscle Test for Upper Limbs"
+            ],
+            "isEditable": true,
+            "numberOfVisits": 3,
+            "showDetailsButton": true,
+            "pivotTable": {}
+          }
+        },
+        "lowerLimbPhysioSummary": {
+          "type": "custom",
+          "displayOrder": 4,
+          "displayType": "Full-Page",
+          "config": {
+            "title": "DASHBOARD_TITLE_LOWER_LIMB_PHYSIO_SUMMARY_LAB_RESULTS_KEY",
+            "template": "<lower-limb-physio-summary section='config' patient='patient' enrollment='enrollment'></lower-limb-physio-summary>"
+          }
+        },
+        "upperLimbPhysioSummary": {
+          "type": "custom",
+          "displayOrder": 5,
+          "displayType": "Full-Page",
+          "config": {
+            "title": "DASHBOARD_TITLE_UPPER_LIMB_PHYSIO_SUMMARY_LAB_RESULTS_KEY",
+            "template": "<upper-limb-physio-summary section='config' patient='patient' enrollment='enrollment'></upper-limb-physio-summary>"
+          }
+        },
+        "physioSummaryScores": {
+          "type": "custom",
+          "displayOrder": 6,
+          "config": {
+            "title": "DASHBOARD_TITLE_PHYSIO_SUMMARY_SCORES_KEY",
+            "template": "<physio-summary-scores section='config' patient='patient' enrollment='enrollment'></physio-summary-scores>"
+          }
+        }
+      }
+    }
+  }
+

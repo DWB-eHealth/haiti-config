@@ -1,0 +1,174 @@
+{
+        "id": "bahmni.registration",
+        "instanceOf":"bahmni.template.registration",
+        "description": "Bahmni Patient Registration App",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.registration.patient.search.result.action",
+                "description": "Bahmni Patient Search Result Action"
+            },
+            {
+                "id": "org.bahmni.registration.patient.next",
+                "description": "After Bahmni Patient Registration, forward url configuration"
+            }
+        ],
+        "contextModel": [
+            "patientUuid",
+            "activeVisitUuid"
+        ],
+        "config" : {
+            "showBirthTime": false,
+            "showLastName": true,
+            "isLastNameMandatory": true,
+            "mandatoryPersonAttributes" : [
+                "id1Document",
+                "id1FullNameEnglish",
+                "id1DocNumber",
+                "spokenLanguages",
+                "phoneNumber1"
+                ],
+            "patientInformation": {
+                "patientContact": {
+                    "title": "Patient Contact Details",
+                    "translationKey": "Patient Contact Details",
+                    "attributes": [
+                        "phoneNumber1",
+                        "phoneNumber2",
+                        "phoneNumber3",
+                        "emailAddress",
+                        "whatsapp",
+                        "facebook",
+                        "viber"
+                    ],
+                    "order": 2,
+                    "expanded": true
+                },
+                "idDocumentOne": {
+                    "title": "Patient ID Documents",
+                    "translationKey": "Patient ID Documents 1",
+                    "attributes": [
+                        "id1Document",
+                        "id1FullNameEnglish",
+                        "id1DocNumber",
+                        "id1DateOfExpiry"
+                    ],
+                    "order": 4,
+                    "expanded": true
+                },
+                "idDocumentTwo": {
+                    "title": "Patient ID Documents",
+                    "translationKey": "Patient ID Documents 2",
+                    "attributes": [
+                        "id2Document",
+                        "id2FullNameEnglish",
+                        "id2DocNumber",
+                        "id2DateOfExpiry"
+                    ],
+                    "order": 5,
+                    "expanded": true
+                },
+
+                "LegalRepresentative": {
+                    "title": "Legal Representative (for patient under 18 years only) ",
+                    "translationKey": "Legal Representative (for patient under 18 years only) ",
+                    "attributes": [
+                        "legalRepFullNameEnglish",
+                        "legalRepFullNameFrench",
+                        "legalRepRelationWithPatient",
+                        "legalRepGender",
+                        "legalRepDob",
+                        "legalRepNationality"
+                    ],
+                    "order": 9
+                },
+                "emergencyContact": {
+                    "title": "Emergency Contact Details",
+                    "translationKey": "Emergency Contact Details",
+                    "attributes": [
+                        "emergencyContactName",
+                        "emergencyContactNumber",
+                        "relationWithPatient"
+                    ],
+                    "order": 10
+                },
+                "AdditionalDetails":{
+                    "title": "Patient Arrival Information",
+                    "translationKey":"Patient Arrival Information",
+                    "attributes":  [
+                        "expectedDateofArrival",
+                        "dateofArrival"
+                    ],
+                    "order":11,
+                    "expanded": true
+                }
+            },
+            "addressHierarchy": {
+                "showAddressFieldsTopDown": false,
+
+                "freeTextAddressFields": ["address2", "address1"]
+            },
+
+            "relationshipTypeMap": {
+                "Doctor":"provider",
+                "Parent":"patient"
+            },
+            "defaultVisitType": "OPD",
+            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+            "showMiddleName": false,
+            "showCasteSameAsLastNameCheckbox": false,
+            "afterVisitSaveForwardUrl" : "../clinical/#/programs/patient/{{patientUuid}}/consultationContext",
+            "showEnterID":false,            "printOptions": [
+
+                {
+                    "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                    "shortcutKey": "p"
+                },
+                {
+                    "translationKey": "REGISTRATION_PRINT_STICKER_KEY",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
+                    "shortcutKey": "t"
+                }
+            ],
+            "fieldValidation" : {
+                "familyName" : {"pattern" : "^[-a-zA-Z ' _]+$", "errorMessage" : "Should contain characters"},
+                "givenName" : {"pattern" :  "^[-a-zA-Z -' _]+$",  "errorMessage" : "Should it contain characters"},
+                "phoneNumber1" :{"pattern" : "[+0-9]{0,}","errorMessage" : "Should contain Numbers And '+' "},
+                "phoneNumber2" :{"pattern" : "[+0-9]{0,}","errorMessage" : "Should contain Numbers And '+' "},
+                "phoneNumber3" :{"pattern" : "[+0-9]{0,}","errorMessage" : "Should contain Numbers And '+' "},
+                "caretakerPhoneNumber1" :{"pattern" : "[+0-9]{0,}","errorMessage" : "Should contain Numbers And '+' "},
+                "caretakerPhoneNumber2" :{"pattern" : "[+0-9]{0,}","errorMessage" : "Should contain Numbers And '+' "},
+                "emergencyContactNumber" :{"pattern" : "[+0-9]{0,}","errorMessage" : "Should contain Numbers And '+' "}
+
+
+            },
+            "patientSearch": {
+		"address": {
+                    "label": "Country",
+                    "placeholder": "Enter Country",
+                    "field": "address3"
+                }
+            },
+            "forwardUrlsForVisitTypes": [
+                {
+                    "visitType": "First Stage Validation",
+                    "forwardUrl": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext",
+                    "translationKey": "Enter First stage details",
+                    "shortcutKey": "c"
+                },
+                {
+                    "visitType": "Follow-Up Validation",
+                    "forwardUrl": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext",
+                    "translationKey": "Enter Follow-Up Details",
+                    "shortcutKey": "d"
+                },
+                {
+                    "visitType": "Hospital",
+                    "forwardUrl": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext",
+                    "translationKey": "Enter hospital visit Details",
+                    "shortcutKey": "h"
+                }
+
+            ]
+        }
+}
